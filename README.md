@@ -1,2 +1,31 @@
-# Virtual-Mouse-Cursor-Controlled-by-hand-movement
-A Hand-Controlled Virtual Mouse using Python, OpenCV, MediaPipe, and PyAutoGUI. This project allows users to control their mouse cursor with hand gestures via a webcam. The system detects hand landmarks and translates movements into cursor actions, with smooth tracking and pinch-based clicking.
+# 🖱️ Hand-Controlled Virtual Mouse
+
+This project is a **Hand-Controlled Virtual Mouse** powered by Python, OpenCV, MediaPipe, and PyAutoGUI. It enables users to control the mouse cursor and perform click actions using simple hand gestures via a webcam.
+
+## 🚀 Features
+- **Real-time Hand Tracking** using MediaPipe.
+- **Smooth Cursor Movement** with jitter reduction.
+- **Gesture-Based Clicking:** Perform mouse clicks using a pinch gesture (thumb + index finger).
+- **Dynamic Click Sensitivity** based on hand size.
+
+## 🛠️ Tech Stack
+- **Python**
+- **OpenCV** - For image processing.
+- **MediaPipe** - For hand tracking.
+- **PyAutoGUI** - For controlling mouse actions.
+
+## ⚙️ How It Works
+1. The webcam captures your hand movements.
+2. MediaPipe detects hand landmarks.
+3. The index finger’s position controls the mouse cursor.
+4. A pinch gesture (thumb + index finger close together) triggers a mouse click.
+
+## 📥 Installation and run
+1. **Clone the repository** *(or download the ZIP)*:
+```bash
+git clone https://github.com/your-username/hand-controlled-virtual-mouse.git
+cd hand-controlled-virtual-mouse
+
+pip install opencv-python mediapipe pyautogui
+python hand_virtual_mouse.py
+
