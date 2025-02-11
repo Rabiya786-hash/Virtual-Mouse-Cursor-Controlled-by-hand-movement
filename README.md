@@ -23,9 +23,8 @@ This project is a **Hand-Controlled Virtual Mouse** powered by Python, OpenCV, M
 ## 📥 Installation and run
 1. **Clone the repository** *(or download the ZIP)*:
 ```bash
-git clone https://github.com/your-username/hand-controlled-virtual-mouse.git
-cd hand-controlled-virtual-mouse
+git clone [repository-url]
+cd Hand-Controlled Virtual Mouse
 
 pip install opencv-python mediapipe pyautogui
-python hand_virtual_mouse.py
-
+python virtual_mouse.py
