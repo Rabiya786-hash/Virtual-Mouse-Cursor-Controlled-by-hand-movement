@@ -25,6 +25,10 @@ prev_x, prev_y = 0, 0
 def calculate_distance(p1, p2):
     return math.hypot(p1.x - p2.x, p1.y - p2.y)
 
+# Create OpenCV window & set it always on top
+cv2.namedWindow("Hand-Controlled Virtual Mouse", cv2.WINDOW_NORMAL)
+cv2.setWindowProperty("Hand-Controlled Virtual Mouse", cv2.WND_PROP_TOPMOST, 1)
+
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -51,8 +55,8 @@ while True:
             prev_x, prev_y = curr_x, curr_y
 
             # Pinch gesture for click
-            thumb_finger = hand_landmarks.landmark[4]
-            distance = calculate_distance(thumb_finger, index_finger)
+            thumb_tip = hand_landmarks.landmark[4]
+            distance = calculate_distance(thumb_tip, index_finger)
 
             # Dynamic threshold based on hand size
             wrist = hand_landmarks.landmark[0]
@@ -64,6 +68,7 @@ while True:
             current_time = time.time()
             if distance < click_threshold and (current_time - last_click_time) > click_cooldown:
                 pyautogui.click()
+               # print("CLICK")
                 last_click_time = current_time
 
     cv2.imshow("Hand-Controlled Virtual Mouse", frame)
